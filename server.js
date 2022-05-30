@@ -45,7 +45,7 @@ app.get('/getDevices', async(req, res) => {
     }
 })
 
-app.get('getStatus', async(req, res) => {
+app.get('/getStatus', async(req, res) => {
     try {
         const device = await Devices.findById(mongoose.Types.ObjectId("6294a52d140b32389682268c"));
 
