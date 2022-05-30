@@ -45,6 +45,16 @@ app.get('/getDevices', async(req, res) => {
     }
 })
 
+app.get('getStatus', async(req, res) => {
+    try {
+        const device = await Devices.findById(mongoose.Types.ObjectId("6294a52d140b32389682268c"));
+
+        res.json(device.status);
+    } catch (error) {
+        res.status(400).json("There was some error!");
+    }
+})
+
 app.post('/addDevice', async(req, res) => {
     try {
         const addDevice = new Devices({
